@@ -1,0 +1,3 @@
+recursive-include mikedoc *
+global-exclude *.py[cod]
+include VERSION
