@@ -16,11 +16,9 @@ Here are fields exposed in the class:
 
 | Field | Description |
 | --- | --- |
-| name | String representing the dotted name of the module.
-Note that for a module `package/__init__.py`, the dotted name would be `package.__init__` |
+| name | String representing the dotted name of the module. Note that for a module `package/__init__.py`, the dotted name would be `package.__init__` |
 | obj | Alias for field number 1 |
-| doc | The docstring of the module, parsable with
-`mikedoc.parse_docstring`. The field is set to `None` in absence of docstring. |
+| doc | The docstring of the module, parsable with `mikedoc.parse_docstring`. The field is set to `None` in absence of docstring. |
 
 <p align="right"><a href="#mikedoc-api-reference">Back to top</a></p>
 

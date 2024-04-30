@@ -520,6 +520,8 @@ class ClassDocPage:
         contents = list()
         for name in obj._fields:
             description = getattr(obj, name).__doc__
+            description = description if description else "No description."
+            description = description.replace("\n", " ")
             line = templates.TWO_COLUMNS_TABLE_ENTRY.format(col1=misc.escape_emphasis(name),
                                                             col2=description)
             contents.append(line)

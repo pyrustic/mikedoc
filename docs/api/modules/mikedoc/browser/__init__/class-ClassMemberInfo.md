@@ -17,11 +17,9 @@ Here are fields exposed in the class:
 | --- | --- |
 | name | The name of the member. This isn't a dotted name. |
 | obj | The object representing the member. |
-| doc | The docstring of the member, parsable with
-`mikedoc.parse_docstring`. The field is set to `None` in absence of docstring. |
+| doc | The docstring of the member, parsable with `mikedoc.parse_docstring`. The field is set to `None` in absence of docstring. |
 | signature | The signature string if it is available, otherwise, None. |
-| lineage | List of bases classes where the class member
- has been overridden or defined. The list goes from the most recent change to the first definition. |
+| lineage | List of bases classes where the class member  has been overridden or defined. The list goes from the most recent change to the first definition. |
 | is\_field | Boolean to tells whether the member is a field or not |
 | is\_property | Boolean to tells whether the member is a property or not |
 | is\_method | Boolean to tells whether the member is a method or not |

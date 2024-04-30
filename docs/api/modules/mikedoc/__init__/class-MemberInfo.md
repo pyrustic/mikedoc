@@ -17,13 +17,10 @@ Here are fields exposed in the class:
 | --- | --- |
 | name | The name of the member. This isn't a dotted name. |
 | obj | The object representing the member. |
-| doc | The docstring of the member, parsable with
-`mikedoc.parse_docstring`. The field is set to `None` in absence of docstring. |
+| doc | The docstring of the member, parsable with `mikedoc.parse_docstring`. The field is set to `None` in absence of docstring. |
 | signature | The signature string if it is available, otherwise, None. |
-| bases | List of bases class objects from which a class inherits from.
-This isn't the `mro` at all. This field is set to None when the member isn't a class |
-| members | The list of members of a class. 
-This list contains `mikedoc.ClassMemberInfo` instances. If the member isn't a class, the list is set to None. |
+| bases | List of bases class objects from which a class inherits from. This isn't the `mro` at all. This field is set to None when the member isn't a class |
+| members | The list of members of a class.  This list contains `mikedoc.ClassMemberInfo` instances. If the member isn't a class, the list is set to None. |
 | is\_field | Boolean telling whether the member is a field or not |
 | is\_class | Boolean telling whether the member is a class or not |
 | is\_func | Boolean telling whether the member is a func or not |
