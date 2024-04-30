@@ -1,4 +1,4 @@
-"""Misc stuff"""
+"""Misc stuff. The `parse_docstring` function is defined in this module."""
 import os
 import os.path
 import sys

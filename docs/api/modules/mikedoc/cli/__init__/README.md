@@ -4,10 +4,10 @@
 # Module Overview
 > Module: **mikedoc.cli.\_\_init\_\_**
 
-No docstring.
+The command-line interface class is defined here
 
 ## Classes
-- [**Cli**](/docs/api/modules/mikedoc/cli/__init__/class-Cli.md): No docstring.
+- [**Cli**](/docs/api/modules/mikedoc/cli/__init__/class-Cli.md): Command-line interface class
     - [root\_dir](/docs/api/modules/mikedoc/cli/__init__/class-Cli.md#properties-table); _getter_
     - [silent\_mode](/docs/api/modules/mikedoc/cli/__init__/class-Cli.md#properties-table); _getter, setter_
     - [echo](/docs/api/modules/mikedoc/cli/__init__/class-Cli.md#echo): Print text if `silent_mode` is False

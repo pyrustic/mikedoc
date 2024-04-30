@@ -4,7 +4,7 @@
 # Module Overview
 > Module: **mikedoc.misc.\_\_init\_\_**
 
-Misc stuff
+Misc stuff. The `parse_docstring` function is defined in this module.
 
 ## Functions
 - [**All functions**](/docs/api/modules/mikedoc/misc/__init__/funcs.md)

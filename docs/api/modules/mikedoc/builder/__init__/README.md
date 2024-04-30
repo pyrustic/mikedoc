@@ -4,7 +4,7 @@
 # Module Overview
 > Module: **mikedoc.builder.\_\_init\_\_**
 
-No docstring.
+The `Builder` class and the `build` function are defined in this module.
 
 ## Functions
 - [**All functions**](/docs/api/modules/mikedoc/builder/__init__/funcs.md)
@@ -13,7 +13,7 @@ No docstring.
 <p align="right"><a href="#mikedoc-api-reference">Back to top</a></p>
 
 ## Classes
-- [**Builder**](/docs/api/modules/mikedoc/builder/__init__/class-Builder.md): No docstring.
+- [**Builder**](/docs/api/modules/mikedoc/builder/__init__/class-Builder.md): Class to build the API reference
     - [api\_dir](/docs/api/modules/mikedoc/builder/__init__/class-Builder.md#properties-table); _getter_
     - [pkg\_dir](/docs/api/modules/mikedoc/builder/__init__/class-Builder.md#properties-table); _getter_
     - [project\_name](/docs/api/modules/mikedoc/builder/__init__/class-Builder.md#properties-table); _getter_

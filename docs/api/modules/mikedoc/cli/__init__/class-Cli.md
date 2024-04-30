@@ -8,7 +8,7 @@
 >
 > Inheritance: `object`
 
-No class docstring.
+Command-line interface class
 
 ## Properties table
 Here are properties exposed in the class:

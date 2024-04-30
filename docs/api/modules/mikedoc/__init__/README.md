@@ -4,7 +4,7 @@
 # Module Overview
 > Module: **mikedoc.\_\_init\_\_**
 
-No docstring.
+This module exposes public functions and classes useful for most cases.
 
 ## Functions
 - [**All functions**](/docs/api/modules/mikedoc/__init__/funcs.md)
@@ -26,7 +26,7 @@ No docstring.
     - is\_field: Boolean to tells whether the member is a field or not
     - is\_property: Boolean to tells whether the member is a property or not
     - is\_method: Boolean to tells whether the member is a method or not
-- [**Cli**](/docs/api/modules/mikedoc/__init__/class-Cli.md): No docstring.
+- [**Cli**](/docs/api/modules/mikedoc/__init__/class-Cli.md): Command-line interface class
     - [root\_dir](/docs/api/modules/mikedoc/__init__/class-Cli.md#properties-table); _getter_
     - [silent\_mode](/docs/api/modules/mikedoc/__init__/class-Cli.md#properties-table); _getter, setter_
     - [echo](/docs/api/modules/mikedoc/__init__/class-Cli.md#echo): Print text if `silent_mode` is False

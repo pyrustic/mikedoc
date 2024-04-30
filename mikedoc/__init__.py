@@ -1,3 +1,4 @@
+"""This module exposes public functions and classes useful for most cases."""
 from mikedoc.builder import build
 from mikedoc.browser import browse, ModuleInfo, MemberInfo, ClassMemberInfo
 from mikedoc.cli import Cli

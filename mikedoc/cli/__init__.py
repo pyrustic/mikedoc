@@ -1,3 +1,4 @@
+"""The command-line interface class is defined here"""
 import os
 import os.path
 import paradict
@@ -41,6 +42,7 @@ CONFIG_SCHEMA = {"project_name": "str",
 
 
 class Cli:
+    """Command-line interface class"""
     def __init__(self, root_dir, silent_mode=False):
         """Init
 

@@ -8,7 +8,7 @@
 >
 > Inheritance: `object`
 
-No class docstring.
+Class to build the API reference
 
 ## Properties table
 Here are properties exposed in the class:

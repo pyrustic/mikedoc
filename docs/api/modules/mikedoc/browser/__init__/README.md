@@ -4,7 +4,7 @@
 # Module Overview
 > Module: **mikedoc.browser.\_\_init\_\_**
 
-No docstring.
+This module exposes function for browsing the codebase, and iterating/inspecting modules
 
 ## Functions
 - [**All functions**](/docs/api/modules/mikedoc/browser/__init__/funcs.md)

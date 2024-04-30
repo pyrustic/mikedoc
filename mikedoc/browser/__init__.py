@@ -1,3 +1,4 @@
+"""This module exposes function for browsing the codebase, and iterating/inspecting modules"""
 import inspect
 import importlib
 import importlib.util

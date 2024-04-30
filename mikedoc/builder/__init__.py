@@ -1,3 +1,4 @@
+"""The `Builder` class and the `build` function are defined in this module."""
 import os
 import os.path
 from enum import Enum
@@ -32,6 +33,7 @@ def build(root_dir, project_name, project_url, pkg_dir, api_dir):
 
 
 class Builder:
+    """Class to build the API reference"""
     def __init__(self, root_dir, project_name,
                  project_url, pkg_dir, api_dir):
         """Init
