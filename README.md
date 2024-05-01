@@ -144,9 +144,9 @@ The code above would output this:
 
 | Project | API reference |
 | --- | --- |
-| [MikeDoc](#readme): Neat docstring format for generating API references | [mikedoc/docs/api](/docs/api) |
-| [Braq](https://github.com/pyrustic/braq): Customizable data format for config files, AI prompts, and more | [braq/docs/api](https://github.com/pyrustic/braq/tree/master/docs/api) |
-| [Paradict](https://github.com/pyrustic/paradict): Streamable multi-format serialization with schema | [paradict/docs/api](https://github.com/pyrustic/paradict/tree/master/docs/api) |
+| [MikeDoc](#readme): Neat docstring format for generating API references | [mikedoc/docs/api](https://github.com/pyrustic/mikedoc/blob/master/docs/api/README.md#mikedoc-api-reference) |
+| [Braq](https://github.com/pyrustic/braq): Customizable data format for config files, AI prompts, and more | [braq/docs/api](https://github.com/pyrustic/braq/blob/master/docs/api/README.md#braq-api-reference) |
+| [Paradict](https://github.com/pyrustic/paradict): Streamable multi-format serialization with schema | [paradict/docs/api](https://github.com/pyrustic/paradict/blob/master/docs/api/README.md#paradict-api-reference) |
 
 # Docstring format
 The format can be summarized as follows:
