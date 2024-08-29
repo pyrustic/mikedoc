@@ -1,4 +1,4 @@
-###### MikeDoc API Reference
+###### Mikedoc API Reference
 [Home](/docs/api/README.md) | [Project](/README.md) | Module | [Source](/mikedoc/browser/__init__.py)
 
 # Module Overview
@@ -8,7 +8,7 @@ This module exposes function for browsing the codebase, and iterating/inspecting
 
 ## Functions
 - [**All functions**](/docs/api/modules/mikedoc/browser/__init__/funcs.md)
-    - [browse](/docs/api/modules/mikedoc/browser/__init__/funcs.md#browse): Generator to iterate over each module info and the associated members' info.
+    - [browse](/docs/api/modules/mikedoc/browser/__init__/funcs.md#browse): Generator to iterate through each module info and the associated members' info.
     - [inspect\_module](/docs/api/modules/mikedoc/browser/__init__/funcs.md#inspect_module): Inspect a module object and returns a list of 2-tuples representing the module's members
     - [iter\_modules](/docs/api/modules/mikedoc/browser/__init__/funcs.md#iter_modules): Generator for iterating over modules
 

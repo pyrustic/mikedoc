@@ -1,4 +1,4 @@
-###### MikeDoc API Reference
+###### Mikedoc API Reference
 [Home](/docs/api/README.md) | [Project](/README.md) | Module | [Source](/mikedoc/errors/__init__.py)
 
 # Module Overview

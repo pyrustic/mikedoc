@@ -1,4 +1,4 @@
-###### MikeDoc API Reference
+###### Mikedoc API Reference
 [Home](/docs/api/README.md) | [Project](/README.md) | [Module](/docs/api/modules/mikedoc/browser/__init__/README.md) | [Source](/mikedoc/browser/__init__.py)
 
 # Class ClassMemberInfo

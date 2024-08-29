@@ -1,5 +1,5 @@
-# MikeDoc API Reference
-Here are modules that make up [MikeDoc](/README.md):
+# Mikedoc API Reference
+Here are modules that make up [Mikedoc](/README.md):
 
 [mikedoc.\_\_init\_\_](/docs/api/modules/mikedoc/__init__/README.md)
 <br>

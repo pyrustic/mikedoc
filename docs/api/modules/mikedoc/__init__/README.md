@@ -1,4 +1,4 @@
-###### MikeDoc API Reference
+###### Mikedoc API Reference
 [Home](/docs/api/README.md) | [Project](/README.md) | Module | [Source](/mikedoc/__init__.py)
 
 # Module Overview
@@ -8,7 +8,7 @@ This module exposes public functions and classes useful for most cases.
 
 ## Functions
 - [**All functions**](/docs/api/modules/mikedoc/__init__/funcs.md)
-    - [browse](/docs/api/modules/mikedoc/__init__/funcs.md#browse): Generator to iterate over each module info and the associated members' info.
+    - [browse](/docs/api/modules/mikedoc/__init__/funcs.md#browse): Generator to iterate through each module info and the associated members' info.
     - [build](/docs/api/modules/mikedoc/__init__/funcs.md#build): Build the API reference (Markdown files) in the api directory
     - [parse\_docstring](/docs/api/modules/mikedoc/__init__/funcs.md#parse_docstring): Parse a MikeDoc docstring
 

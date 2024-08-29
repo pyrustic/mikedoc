@@ -55,7 +55,7 @@ ClassMemberInfo.is_method.__doc__ = """Boolean to tells whether the member is a 
 
 
 def browse(root_dir, pkg_dir):
-    """Generator to iterate over each module info and the associated members' info.
+    """Generator to iterate through each module info and the associated members' info.
 
     [param]
     - root_dir: Project root directory path
@@ -68,7 +68,7 @@ def browse(root_dir, pkg_dir):
     """
     for module_obj, members in iter_modules(root_dir, pkg_dir):
         module_name = module_obj.__name__
-        module_doc = inspect.getdoc(module_obj)
+        module_doc = get_printable_doc(module_obj)
         module_info = ModuleInfo(module_name, module_obj, module_doc)
         members = [create_member_info(member) for member in members]
         yield module_info, members
@@ -137,7 +137,7 @@ def create_member_info(member):
         is_func = True
     else:  # is_field
         is_field = True
-    doc = inspect.getdoc(obj)
+    doc = get_printable_doc(obj)
     signature = _get_signature(obj)
     class_members = get_class_members(obj) if is_class else None
     return MemberInfo(name, obj, doc, signature, bases, class_members,
@@ -151,7 +151,7 @@ def get_class_members(obj):
         if attr.startswith("__") and attr != "__init__":
             continue
         obj, lineage = value
-        doc = inspect.getdoc(obj)
+        doc = get_printable_doc(obj)
         is_field = is_property = is_method = False
         signature = None
         # PROPERTY handler
@@ -230,6 +230,10 @@ def restrict_members(members, restrict_to):
         if name in restrict_to:
             cache.append((name, obj))
     return cache
+
+
+def get_printable_doc(entity):
+    return inspect.getdoc(entity)
 
 
 def _get_signature(obj):

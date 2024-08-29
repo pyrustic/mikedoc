@@ -1,6 +1,7 @@
 """The command-line interface class is defined here"""
 import os
 import os.path
+import braq
 import paradict
 import mikedoc
 
@@ -86,14 +87,14 @@ class Cli:
         return True
 
     def _create_config_file(self):
-        filename = os.path.join(self._root_dir, "mikedoc.dict")
+        filename = os.path.join(self._root_dir, "mikedoc.braq")
         if os.path.exists(filename):
-            self.echo("Config file 'mikedoc.dict' already exists.")
+            self.echo("Config file 'mikedoc.braq' already exists.")
             return False
         text = create_config_text(self._root_dir)
         with open(filename, "w", encoding="utf-8") as file:
             file.write(text)
-        self.echo("Config file 'mikedoc.dict' created !")
+        self.echo("Config file 'mikedoc.braq' created !")
         return True
 
     def _build_api_reference(self):
@@ -105,9 +106,9 @@ class Cli:
         return True
 
     def _load_config(self):
-        filename = os.path.join(self._root_dir, "mikedoc.dict")
+        filename = os.path.join(self._root_dir, "mikedoc.braq")
         if not os.path.exists(filename):
-            self.echo("Missing config file 'mikedoc.dict'. Run the 'init' command in the root dir.")
+            self.echo("Missing config file 'mikedoc.braq'. Run the 'init' command in the root dir.")
             return
         config = load_config(filename)
         if not config:
@@ -129,18 +130,13 @@ def create_config_text(root_dir):
 
 
 def load_config(filename):
-    config = paradict.read(filename, skip_comments=True)
-    if not config_is_ok(config):
+    braq_dict = braq.load_config(filename,
+                                 skip_comments=True)
+    config = braq_dict.get("")  # get the unnamed section
+    if not paradict.is_valid(config, CONFIG_SCHEMA):
         return
     return config
 
 
 def build_api_reference(root_dir, config):
     mikedoc.build(root_dir, **config)
-
-
-def config_is_ok(config):
-    try:
-        return paradict.validate(config, CONFIG_SCHEMA)
-    except Exception as e:
-        return False

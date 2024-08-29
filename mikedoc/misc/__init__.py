@@ -142,6 +142,27 @@ def escape_emphasis(text):
     return text
 
 
+def escape_unicode_string(s):
+    """BEWARE ! This function will convert a line feed into: \x0a"""
+    if not s:
+        return s
+    cache = list()
+    for char in s:
+        if not is_printable(char):
+            char = "\\x{:02x}".format(ord(char))
+        cache.append(char)
+    return "".join(cache)
+
+
+def is_printable(char):
+    try:
+        char.encode("utf-8")
+    except Exception:
+        return False
+    else:
+        return char.isprintable()
+
+
 def save_api_page(text, root_dir, api_dir, module_name=None,
                   basename="README.md"):
     if not text or text.isspace():

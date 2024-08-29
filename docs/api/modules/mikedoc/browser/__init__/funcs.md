@@ -1,4 +1,4 @@
-###### MikeDoc API Reference
+###### Mikedoc API Reference
 [Home](/docs/api/README.md) | [Project](/README.md) | [Module](/docs/api/modules/mikedoc/browser/__init__/README.md) | [Source](/mikedoc/browser/__init__.py)
 
 # Functions within module
@@ -10,7 +10,7 @@ Here are functions exposed in the module:
 - [iter\_modules](#iter_modules)
 
 ## browse
-Generator to iterate over each module info and the associated members' info.
+Generator to iterate through each module info and the associated members' info.
 
 ```python
 def browse(root_dir, pkg_dir):
