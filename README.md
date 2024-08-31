@@ -4,7 +4,7 @@
 
 <!-- Cover -->
 <div align="center">
-    <img Xsrc="https://raw.githubusercontent.com/pyrustic/misc/master/assets/mikedoc/cover.jpg" alt="Cover image" width="572">
+    <img src="https://raw.githubusercontent.com/pyrustic/misc/master/assets/mikedoc/cover.jpg" alt="Cover image" width="572">
     <p align="center"> 
     <a href="https://commons.wikimedia.org/wiki/File:Tavernier_Jean_Mielot.jpg">Jean Le Tavernier</a>, Public domain, via Wikimedia Commons
     </p>
