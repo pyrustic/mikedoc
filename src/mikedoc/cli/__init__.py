@@ -130,8 +130,7 @@ def create_config_text(root_dir):
 
 
 def load_config(filename):
-    braq_dict = braq.load_config(filename,
-                                 skip_comments=True)
+    braq_dict = braq.load_config(filename)
     config = braq_dict.get("")  # get the unnamed section
     if not paradict.is_valid(config, CONFIG_SCHEMA):
         return

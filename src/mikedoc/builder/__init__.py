@@ -160,8 +160,8 @@ class HomePage:
         contents = list()
         for module_info in self._modules:
             name = module_info.name
-            docstring_data = misc.parse_docstring(module_info.doc)
-            description = docstring_data.get("", "No docstring.")
+            docstring_dict = misc.parse_docstring(module_info.doc)
+            description = docstring_dict.get("", "No docstring.")
             short_description = misc.get_short_description(description,
                                                            length=MODULE_DESC_LEN_ON_HOME_PAGE)
             api_url = misc.build_api_url(self._api_dir, name, "README.md")
@@ -219,10 +219,10 @@ class ModuleOverviewPage:
         header_div = _create_header_div_1(self._project_name, self._project_url,
                                           self._pkg_dir, self._api_dir, self._module_name)
         back_to_top = _create_back_to_top(self._project_name)
-        docstring_data = misc.parse_docstring(self._module_info.doc)
+        docstring_dict = misc.parse_docstring(self._module_info.doc)
         text = text.format(header_div=header_div,
                            module_name=misc.escape_emphasis(self._module_name),
-                           description=docstring_data.get("", "No docstring."),
+                           description=docstring_dict.get("", "No docstring."),
                            members=members_section,
                            back_to_top=back_to_top)
         return text
@@ -259,8 +259,8 @@ class ModuleOverviewPage:
         funcs_page_url = misc.build_api_url(self._api_dir, self._module_name, "funcs.md")
         contents = list()
         for func_info in self._funcs:
-            docstring_data = misc.parse_docstring(func_info.doc)
-            func_description = docstring_data.get("", "No docstring.")
+            docstring_dict = misc.parse_docstring(func_info.doc)
+            func_description = docstring_dict.get("", "No docstring.")
             length = MEMBER_DESC_LEN_ON_MODULE_PAGE
             func_short_description = misc.get_short_description(func_description,
                                                                 length=length)
@@ -281,8 +281,8 @@ class ModuleOverviewPage:
             return
         contents = list()
         for class_info in self._classes:
-            docstring_data = misc.parse_docstring(class_info.doc)
-            class_description = docstring_data.get("", "No docstring.")
+            docstring_dict = misc.parse_docstring(class_info.doc)
+            class_description = docstring_dict.get("", "No docstring.")
             length = MEMBER_DESC_LEN_ON_MODULE_PAGE
             class_short_description = misc.get_short_description(class_description,
                                                                  length=length)
@@ -322,8 +322,8 @@ class ModuleOverviewPage:
                 description = "`{}`".format(repr(member.obj))
             else:
                 urlified_member_name = misc.urlify_section_title(member.name)
-                docstring_data = misc.parse_docstring(member.doc)
-                description = docstring_data.get("", "No docstring.")
+                docstring_dict = misc.parse_docstring(member.doc)
+                description = docstring_dict.get("", "No docstring.")
             length = MEMBER_DESC_LEN_ON_MODULE_PAGE
             short_description = misc.get_short_description(description, length=length)
 
@@ -490,8 +490,8 @@ class ClassDocPage:
         inheritance = _create_inheritance_segment(self._class_info.bases,
                                                   self._pkg_dir, self._api_dir)
         escaped_module_name = misc.escape_emphasis(self._module_name)
-        docstring_data = misc.parse_docstring(self._class_info.doc)
-        description = docstring_data.get("", "No class docstring.")
+        docstring_dict = misc.parse_docstring(self._class_info.doc)
+        description = docstring_dict.get("", "No class docstring.")
         escaped_class_name = misc.escape_emphasis(self._class_info.name)
         text = templates.CLASS_DOC_PAGE.format(header_div=header_div,
                                                class_name=escaped_class_name,
@@ -554,8 +554,8 @@ class ClassDocPage:
         for prop in properties:
             property_methods = _name_property_methods(prop)
             methods_as_str = "_{}_".format(", ".join(property_methods))
-            docstring_data = misc.parse_docstring(prop.doc)
-            doc = docstring_data.get("", "No docstring.")
+            docstring_dict = misc.parse_docstring(prop.doc)
+            doc = docstring_dict.get("", "No docstring.")
             escaped_property_name = misc.escape_emphasis(prop.name)
             entry = templates.THREE_COLUMNS_TABLE_ENTRY.format(col1=escaped_property_name,
                                                                col2=methods_as_str,
@@ -686,28 +686,28 @@ def _name_property_methods(prop):
 def _create_func_doc(project_name, func_info, decorator=None):
     decorator = decorator + "\n" if decorator else ""
     func_name = func_info.name
-    docstring_data = misc.parse_docstring(func_info.doc)
-    description = docstring_data.get("", "No docstring")
+    docstring_dict = misc.parse_docstring(func_info.doc)
+    description = docstring_dict.get("", "No docstring")
     contents = list()
     # params
-    params = docstring_data.get("param")
+    params = docstring_dict.get("params")
     if params:
         table = _create_func_params_table(params)
         contents.append(table)
     # returns
-    returns_note = docstring_data.get("return", "")
+    returns_note = docstring_dict.get("returns", "")
     returns_note = returns_note.strip()
     if returns_note:
         section = _create_func_returns_section(returns_note)
         contents.append(section)
     # yields
-    yields_note = docstring_data.get("yield", "")
+    yields_note = docstring_dict.get("yields", "")
     yields_note = yields_note.strip()
     if yields_note:
         section = _create_func_yields_section(yields_note)
         contents.append(section)
     # exceptions
-    exceptions = docstring_data.get("except")
+    exceptions = docstring_dict.get("raises")
     if exceptions:
         table = _create_func_exceptions_section(exceptions)
         contents.append(table)

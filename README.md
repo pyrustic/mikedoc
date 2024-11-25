@@ -118,11 +118,11 @@ docstring = """
 A multiline description
 for a *function* that adds two numbers
 
-[param]
+[params]
 - a: left-hand integer operand
 - b: right-hand integer operand
 
-[return]
+[returns]
 Sum of `a` and `b`"""
 
 # returns a dictionary
@@ -157,20 +157,20 @@ def arbitrary_function(a, b):
     A description of the **function** that
     might span multiple lines.
     
-    [param]
+    [params]
     Optional short text to introduce parameters.
     - a: Short or long description that might
     span multiple lines.
     - b: Short or long description that might
     span multiple lines.
     
-    [return]
+    [returns]
     This section describes the value to return.
     
-    [yield]
+    [yields]
     This section describes the value to yield.
     
-    [except]
+    [raises]
     Optional short text to introduce
     exceptions that might be raised.
     - Exception: Short or long description that might
@@ -358,3 +358,4 @@ Hello world, I'm Alex, a tech enthusiast ! Feel free to get in touch with [me](h
 <br>
 
 [Back to top](#readme)
+

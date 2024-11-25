@@ -39,12 +39,22 @@ def parse_docstring(docstring):
     docstring = docstring if docstring else ""
     doc = braq.parse(docstring)
     for key in doc.keys():
-        if key in ("", "return", "yield"):
-            doc[key] = doc[key].strip()
-    if "param" in doc:
-        doc["param"] = parse_hyphenated_list(doc["param"])
-    if "except" in doc:
-        doc["except"] = parse_hyphenated_list(doc["except"])
+        key = key.lower()
+        if key == "":
+            doc[key] = doc[""].strip()
+        elif key in ("arg", "args", "argument", "arguments", 
+                     "param", "params", "parameter", "parameters"):
+            doc[key] = doc["params"].strip()
+        elif key in ("ret", "return", "returns"):
+            doc[key] = doc["returns"].strip()
+        elif key in ("yield", "yields"):
+            doc[key] = doc["yields"].strip()
+        elif key in ("exc", "except", "exception", "exceptions", "raise", "raises"):
+            doc[key] = doc["raises"].strip()
+    if "params" in doc:
+        doc["params"] = parse_hyphenated_list(doc["params"])
+    if "raises" in doc:
+        doc["raises"] = parse_hyphenated_list(doc["raises"])
     return doc
 
 
