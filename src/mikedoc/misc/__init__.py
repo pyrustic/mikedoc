@@ -38,24 +38,25 @@ def parse_docstring(docstring):
     """
     docstring = docstring if docstring else ""
     doc = braq.parse(docstring)
+    new_doc = dict()
     for key in doc.keys():
         key = key.lower()
         if key == "":
-            doc[key] = doc[""].strip()
+            new_doc[""] = doc[key].strip()
         elif key in ("arg", "args", "argument", "arguments", 
                      "param", "params", "parameter", "parameters"):
-            doc[key] = doc["params"].strip()
+            new_doc["params"] = doc[key].strip()
         elif key in ("ret", "return", "returns"):
-            doc[key] = doc["returns"].strip()
+            new_doc["returns"] = doc[key].strip()
         elif key in ("yield", "yields"):
-            doc[key] = doc["yields"].strip()
+            new_doc["yields"] = doc[key].strip()
         elif key in ("exc", "except", "exception", "exceptions", "raise", "raises"):
-            doc[key] = doc["raises"].strip()
-    if "params" in doc:
-        doc["params"] = parse_hyphenated_list(doc["params"])
-    if "raises" in doc:
-        doc["raises"] = parse_hyphenated_list(doc["raises"])
-    return doc
+            new_doc["raises"] = doc[key].strip()
+    if "params" in new_doc:
+        new_doc["params"] = parse_hyphenated_list(new_doc["params"])
+    if "raises" in new_doc:
+        new_doc["raises"] = parse_hyphenated_list(new_doc["raises"])
+    return new_doc
 
 
 @contextmanager
