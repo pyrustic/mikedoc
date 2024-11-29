@@ -1,7 +1,7 @@
 """The command-line interface class is defined here"""
 import os
 import os.path
-import braq
+import kvf
 import paradict
 import mikedoc
 
@@ -11,14 +11,11 @@ __all__ = ["Cli"]
 
 HELP_TEXT = """\
 MikeDoc - Neat docstring format for generating API references
+https://github.com/pyrustic/mikedoc
 
-
-Commands:
+COMMANDS:
     init        Create the config file
-    build       Build the API reference
-
-
-https://github.com/pyrustic/mikedoc"""
+    build       Build the API reference"""
 
 
 CONFIG_TEXT = """\
@@ -87,14 +84,14 @@ class Cli:
         return True
 
     def _create_config_file(self):
-        filename = os.path.join(self._root_dir, "mikedoc.braq")
+        filename = os.path.join(self._root_dir, "mikedoc.kvf")
         if os.path.exists(filename):
-            self.echo("Config file 'mikedoc.braq' already exists.")
+            self.echo("Config file 'mikedoc.kvf' already exists.")
             return False
         text = create_config_text(self._root_dir)
         with open(filename, "w", encoding="utf-8") as file:
             file.write(text)
-        self.echo("Config file 'mikedoc.braq' created !")
+        self.echo("Config file 'mikedoc.kvf' created !")
         return True
 
     def _build_api_reference(self):
@@ -106,9 +103,9 @@ class Cli:
         return True
 
     def _load_config(self):
-        filename = os.path.join(self._root_dir, "mikedoc.braq")
+        filename = os.path.join(self._root_dir, "mikedoc.kvf")
         if not os.path.exists(filename):
-            self.echo("Missing config file 'mikedoc.braq'. Run the 'init' command in the root dir.")
+            self.echo("Missing config file 'mikedoc.kvf'. Run the 'init' command in the root dir.")
             return
         config = load_config(filename)
         if not config:
@@ -130,8 +127,7 @@ def create_config_text(root_dir):
 
 
 def load_config(filename):
-    braq_dict = braq.load_config(filename)
-    config = braq_dict.get("")  # get the unnamed section
+    config = kvf.get_config(filename).get("")
     if not paradict.is_valid(config, CONFIG_SCHEMA):
         return
     return config

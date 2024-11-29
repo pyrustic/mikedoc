@@ -5,7 +5,7 @@ project_name = 'Mikedoc'
 project_url = '/README.md'
 
 # package directory (relative path)
-pkg_dir = 'mikedoc'
+pkg_dir = 'src/mikedoc'
 
 # API directory (relative path)
 api_dir = 'docs/api'

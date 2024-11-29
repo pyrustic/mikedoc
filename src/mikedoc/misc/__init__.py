@@ -37,7 +37,7 @@ def parse_docstring(docstring):
     values are description/circumstance strings. The empty key represents the intro.
     """
     docstring = docstring if docstring else ""
-    doc = braq.parse(docstring)
+    doc = braq.parse_compact(docstring)
     new_doc = dict()
     for key in doc.keys():
         key = key.lower()
