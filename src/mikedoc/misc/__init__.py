@@ -37,21 +37,21 @@ def parse_docstring(docstring):
     values are description/circumstance strings. The empty key represents the intro.
     """
     docstring = docstring if docstring else ""
-    doc = braq.parse_compact(docstring)
+    doc = braq.decode(docstring)
     new_doc = dict()
     for key in doc.keys():
         key = key.lower()
         if key == "":
-            new_doc[""] = doc[key].strip()
+            new_doc[""] = "\n".join(doc[key]).strip()
         elif key in ("arg", "args", "argument", "arguments", 
                      "param", "params", "parameter", "parameters"):
-            new_doc["params"] = doc[key].strip()
+            new_doc["params"] = "\n".join(doc[key]).strip()
         elif key in ("ret", "return", "returns"):
-            new_doc["returns"] = doc[key].strip()
+            new_doc["returns"] = "\n".join(doc[key]).strip()
         elif key in ("yield", "yields"):
-            new_doc["yields"] = doc[key].strip()
+            new_doc["yields"] = "\n".join(doc[key]).strip()
         elif key in ("exc", "except", "exception", "exceptions", "raise", "raises"):
-            new_doc["raises"] = doc[key].strip()
+            new_doc["raises"] = "\n".join(doc[key]).strip()
     if "params" in new_doc:
         new_doc["params"] = parse_hyphenated_list(new_doc["params"])
     if "raises" in new_doc:
